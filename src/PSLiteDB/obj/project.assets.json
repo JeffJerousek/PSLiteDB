@@ -3194,11 +3194,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Github\\Public\\dev\\PSLiteDB\\src\\PSLiteDB\\PSLiteDB.csproj",
+      "projectUniqueName": "C:\\Github\\Public\\dev\\PSLiteDB_Filesystem\\src\\PSLiteDB\\PSLiteDB.csproj",
       "projectName": "PSLiteDB",
-      "projectPath": "C:\\Github\\Public\\dev\\PSLiteDB\\src\\PSLiteDB\\PSLiteDB.csproj",
+      "projectPath": "C:\\Github\\Public\\dev\\PSLiteDB_Filesystem\\src\\PSLiteDB\\PSLiteDB.csproj",
       "packagesPath": "C:\\Users\\k2\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\Public\\dev\\PSLiteDB\\src\\PSLiteDB\\obj\\",
+      "outputPath": "C:\\Github\\Public\\dev\\PSLiteDB_Filesystem\\src\\PSLiteDB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
