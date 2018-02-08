@@ -49,7 +49,7 @@ namespace PSLiteDB.FileSystem
                 Mode = LiteDB.FileMode.Shared
             };
 
-            var db = new LiteDatabase(conn);
+            var db = new LiteDatabase(dbpath);
             BsonMapper.Global.Entity<FileEntry>()
             .Id(x => x.FullName);
             BsonMapper.Global.SerializeNullValues = true;
