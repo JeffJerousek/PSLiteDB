@@ -172,7 +172,9 @@ namespace PSLiteDB.FileSystem
                 {
                     if (l.StartsWith("C:\\", StringComparison.OrdinalIgnoreCase) || l.StartsWith("D:\\", StringComparison.OrdinalIgnoreCase) || 
                         l.StartsWith("E:\\", StringComparison.OrdinalIgnoreCase) || l.StartsWith("F:\\", StringComparison.OrdinalIgnoreCase) ||
-                        l.StartsWith("G:\\", StringComparison.OrdinalIgnoreCase) || l.StartsWith("H:\\", StringComparison.OrdinalIgnoreCase)
+                        l.StartsWith("G:\\", StringComparison.OrdinalIgnoreCase) || l.StartsWith("H:\\", StringComparison.OrdinalIgnoreCase) ||
+                        l.StartsWith("X:\\", StringComparison.OrdinalIgnoreCase) || l.StartsWith("Y:\\", StringComparison.OrdinalIgnoreCase) ||
+                        l.StartsWith("Z:\\", StringComparison.OrdinalIgnoreCase) || l.StartsWith("M:\\", StringComparison.OrdinalIgnoreCase) 
 
                         )
                     {
