@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace PSLiteDB
+namespace PSLiteDB.FileSystem
 {
     public class FileEntry
     {
@@ -37,7 +37,7 @@ namespace PSLiteDB
         {
             if (!Directory.Exists(dbpath))
             {
-                Directory.CreateDirectory(dbpath);
+                Directory.CreateDirectory(Path.GetDirectoryName(dbpath));
             }
 
             ConnectionString conn = new ConnectionString

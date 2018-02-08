@@ -3185,7 +3185,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\k2\\.nuget\\packages\\": {},
+    "C:\\Users\\Kiran\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3197,14 +3197,14 @@
       "projectUniqueName": "C:\\Github\\Public\\dev\\PSLiteDB_Filesystem\\src\\PSLiteDB\\PSLiteDB.csproj",
       "projectName": "PSLiteDB",
       "projectPath": "C:\\Github\\Public\\dev\\PSLiteDB_Filesystem\\src\\PSLiteDB\\PSLiteDB.csproj",
-      "packagesPath": "C:\\Users\\k2\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Kiran\\.nuget\\packages\\",
       "outputPath": "C:\\Github\\Public\\dev\\PSLiteDB_Filesystem\\src\\PSLiteDB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\k2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kiran\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3212,6 +3212,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\Kiran\\.nuget\\packages\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://powershell.myget.org/F/powershell-core/api/v3/index.json": {}
       },

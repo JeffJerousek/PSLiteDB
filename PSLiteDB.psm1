@@ -1,5 +1,5 @@
-using namespace PSLiteDB
-using namespace LiteDB
+#using namespace PSLiteDB
+#using namespace LiteDB
 
 $script:QueryLDB = [LiteDB.Query]
 
@@ -71,7 +71,7 @@ function ConvertTo-LiteDbBSON
 function Update-XYRecord
 {
     [CmdletBinding()]
-    [ALias("Uxy")]
+    [Alias("uxy")]
     param 
     (
         [Parameter(ValueFromPipelineByPropertyName,ValueFromPipeline)]
@@ -87,7 +87,7 @@ function Update-XYRecord
     process
     {
         $tagsource = Join-Path $env:APPDATA -ChildPath XYPlorer\Tag.dat
-        [CRUD]::Upsert([CRUD]::GetXYplorerFile($tagsource),$Collection)       
+        [PSLiteDB.FileSystem.CRUD]::Upsert(([PSLiteDB.FileSystem.CRUD]::GetXYplorerFile($tagsource)),$Collection)       
     }
     
     end
@@ -114,7 +114,7 @@ function Set-XYIndex
     
     process
     {
-        [CRUD]::CreateIndex($Collection)       
+        [PSLiteDB.FileSystem.CRUD]::CreateIndex($Collection)       
     }
     
     end
@@ -126,7 +126,7 @@ function Set-XYIndex
 function Get-XYIndex
 {
     [CmdletBinding()]
-    [ALias("gixy")]
+    [Alias("gixy")]
     param 
     (
         [Parameter(ValueFromPipelineByPropertyName,ValueFromPipeline)]
@@ -141,7 +141,34 @@ function Get-XYIndex
     
     process
     {
-        [CRUD]::GetIndex($Collection)       
+        [PSLiteDB.FileSystem.CRUD]::GetIndex($Collection)       
+    }
+    
+    end
+    {
+
+    }
+}
+
+function Get-XYPlorerFile
+{
+    [CmdletBinding()]
+    param 
+    (
+        [Parameter(ValueFromPipelineByPropertyName, ValueFromPipeline)]
+        [String]
+        $tagsource = (Join-Path $env:APPDATA -ChildPath XYPlorer\Tag.dat)
+    )
+    
+    begin
+    {
+        
+    }
+    
+    process
+    {
+        #$tagsource = Join-Path $env:APPDATA -ChildPath XYPlorer\Tag.dat
+        [PSLiteDB.FileSystem.CRUD]::GetXYplorerFile($tagsource)   
     }
     
     end
@@ -154,7 +181,7 @@ function Get-XYIndex
 function Find-XYRecord
 {
     [CmdletBinding()]
-    [ALias("FXY")]
+    [Alias("fxy")]
     param 
     (
         [Parameter(ValueFromPipelineByPropertyName,ValueFromPipeline)]
@@ -192,21 +219,21 @@ function Find-XYRecord
         {
 
             Write-Verbose "name::$basename & Tag::$Tag"
-            [CRUD]::FindbyTagNameList($BaseName,$Tag,$Collection)               
+            [PSLiteDB.FileSystem.CRUD]::FindbyTagNameList($BaseName,$Tag,$Collection)               
         }
         elseif ($BaseName -and (-not $Tag)) 
         {
             Write-Verbose "name::$basename"
-            [CRUD]::FindbyNameList($BaseName,$Collection)
+            [PSLiteDB.FileSystem.CRUD]::FindbyNameList($BaseName,$Collection)
         }
         elseif ($Tag -and (-not $BaseName)) 
         {
             Write-Verbose "Tag::$Tag"
-            [CRUD]::FindbyTagList($Tag,$Collection)
+            [PSLiteDB.FileSystem.CRUD]::FindbyTagList($Tag,$Collection)
         }
         else 
         {
-            [CRUD]::List($Limit,$Skip,$Collection)
+            [PSLiteDB.FileSystem.CRUD]::List($Limit,$Skip,$Collection)
         }
              
     }
@@ -235,7 +262,7 @@ function Remove-XYOrphan
     
     process
     {
-        [CRUD]::RemoveOrphans($Collection)       
+        [PSLiteDB.FileSystem.CRUD]::RemoveOrphans($Collection)       
     }
     
     end
@@ -245,4 +272,4 @@ function Remove-XYOrphan
 }
 
 
-Export-ModuleMember -Variable QueryLDB -Function ConvertTo-LiteDBBSON
+Export-ModuleMember -Variable QueryLDB -Function * -Alias *
